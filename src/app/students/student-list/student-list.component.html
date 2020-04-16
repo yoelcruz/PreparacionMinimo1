@@ -1,0 +1,26 @@
+<button (click)="setStudies(['telecos'])">telecos</button>
+<button (click)="setStudies(['sistema'])">sistema</button>
+<button (click)="setStudies(['telecos','sistema'])">telecos y sistema</button>
+<table class="table">
+        <thead class="thead-dark">    
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Studies</th>
+            <th>Phones</th>
+        </tr>
+    </thead>
+    <tbody> 
+        <tr *ngFor="let student of students">
+            <th>{{student.name}}</th>
+            <th>{{student.address}}</th>
+            <th>{{student.studies}}</th>
+            <th> 
+                <div *ngFor="let phone of student.phones">
+                    {{ phone.home || phone.work }}                
+                </div> 
+            </th>
+        </tr>
+    </tbody>
+
+</table>
